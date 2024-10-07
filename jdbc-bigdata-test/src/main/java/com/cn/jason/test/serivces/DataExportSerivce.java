@@ -1,11 +1,12 @@
 package com.cn.jason.test.serivces;
 
 import com.cn.jason.test.factory.JdbcFactory;
-import com.mysql.cj.jdbc.StatementImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.io.*;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.sql.Connection;
@@ -80,6 +81,16 @@ public class DataExportSerivce {
         } catch (SQLException | IOException e) {
             throw new RuntimeException(e);
         }
+
+    }
+
+    public void exportData1000(){}
+
+    public void exportData5000(){}
+
+    public void exportDataAll(){
+        // 多线程导出，线程池5个，测试表10个，每张表数据100万~5000万
+
 
     }
 }
