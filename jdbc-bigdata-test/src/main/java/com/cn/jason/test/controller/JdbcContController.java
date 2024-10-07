@@ -1,11 +1,14 @@
 package com.cn.jason.test.controller;
 
 import com.cn.jason.test.serivces.DataExportSerivce;
+import com.cn.jason.test.serivces.DataLoadService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import java.sql.SQLException;
 
 @RequestMapping("/jdbc")
 @Controller
@@ -13,6 +16,9 @@ public class JdbcContController {
 
     @Autowired
     private DataExportSerivce exportSerivce;
+
+    @Autowired
+    private DataLoadService dataLoadService;
 
 
     @PostMapping("/test")
@@ -52,6 +58,13 @@ public class JdbcContController {
     public String exportAll(){
         System.out.println("开始导出多表数据");
         exportSerivce.exportDataAll();
+        return "";
+    }
+
+    @GetMapping("/loadData")
+    public String loadData() throws SQLException {
+        System.out.println("开始导入多表数据");
+        dataLoadService.loadData();
         return "";
     }
 }
