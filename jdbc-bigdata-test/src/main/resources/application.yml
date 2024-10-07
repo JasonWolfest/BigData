@@ -1,0 +1,12 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: jdbc-bigdata-test
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/bigdata?serverTimezone=Asia/Shanghai
+    username: root
+    password: 19960924Czy.
